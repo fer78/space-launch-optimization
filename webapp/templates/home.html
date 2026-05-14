@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home | SpaceX Launch Optimization Dashboard
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+
+        <h1 class="hero-title">
+            Space Launch Optimization with Machine Learning
+        </h1>
+        
+        <h2 class="hero-title_blue">
+            with Machine Learning
+        </h2>
+
+        <p class="hero-subtitle">
+            Predicting mission success using historical launch data,
+            interactive analytics, and machine learning models.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('main.analytics') }}" class="btn-primary">
+                Explore Analytics
+            </a>
+
+            <a href="{{ url_for('main.predictor') }}" class="btn-secondary">
+                Try the Predictor
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Executive Summary -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Executive Summary</h2>
+
+        <p class="section-text">
+            This project analyzes historical SpaceX launches to identify the
+            operational factors that influence mission success and to build
+            predictive models capable of estimating the probability of a
+            successful launch.
+        </p>
+
+        <p class="section-text">
+            The solution combines exploratory data analysis, geospatial
+            visualization, and machine learning to provide actionable
+            insights for decision-makers.
+        </p>
+
+    </div>
+</section>
+
+<!-- KPI Section -->
+<section class="section section-alt">
+    <div class="container">
+
+        <h2 class="section-title">Key Metrics</h2>
+
+        <div class="kpi-grid">
+
+            <div class="kpi-card">
+                <p class="kpi-value">{{ total_launches }}</p>
+                <p class="kpi-label">Total Launches</p>
+            </div>
+
+            <div class="kpi-card">
+                <p class="kpi-value">{{ success_rate }}%</p>
+                <p class="kpi-label">Success Rate</p>
+            </div>
+
+            <div class="kpi-card">
+                <p class="kpi-value">{{ launch_sites }}</p>
+                <p class="kpi-label">Launch Sites</p>
+            </div>
+
+            <div class="kpi-card">
+                <p class="kpi-value">{{ best_model_accuracy }}%</p>
+                <p class="kpi-label">Best Model Accuracy</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Project Sections -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Application Sections</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Interactive Analytics</h3>
+                <p>
+                    Explore multiple Plotly charts using a dynamic selector.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Launch Sites Map</h3>
+                <p>
+                    Visualize launch locations and success rates on a map.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>ML Predictor</h3>
+                <p>
+                    Estimate launch success probability with the trained model.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Business Insights</h3>
+                <p>
+                    Translate technical findings into strategic conclusions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -5,9 +5,19 @@ from dash import html
 from dash import dcc
 from dash.dependencies import Input, Output
 import plotly.express as px
+from pathlib import Path
+
+# Directorio del proyecto (space-launch-optimization/)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+# Carpeta de datos
+DATA_DIR = PROJECT_ROOT / "data"
+
+# Archivo CSV
+DATASET_PATH = DATA_DIR / "spacex_launch_geo.csv"
 
 # Read the airline data into pandas dataframe
-spacex_df = pd.read_csv("spacex_launch_dash.csv")
+spacex_df = pd.read_csv(DATASET_PATH)
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
 
@@ -95,7 +105,7 @@ def get_scatter_plot(selected_site, payload_range):
             filtered_df,
             x='Payload Mass (kg)',
             y='class',
-            color='Booster Version Category',
+            color='Booster Version',
             title='Payload vs. Launch Outcome for All Sites'
         )
         return fig
