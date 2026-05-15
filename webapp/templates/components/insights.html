@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Business Insights | Space Launch Optimization
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Business Insights</h1>
+        <p class="page-subtitle">
+            Key findings and strategic conclusions derived from the analysis.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Executive Summary Card -->
+        <div class="insight-card">
+            <h2>Executive Summary</h2>
+            <p>
+                Historical launch data reveals that payload mass, orbit type,
+                launch site, and booster configuration significantly influence
+                mission success probability.
+            </p>
+        </div>
+
+        <!-- Key Findings -->
+        <div class="insight-card">
+            <h2>Key Findings</h2>
+            <ul class="insight-list">
+                <li>Launch success rates have improved consistently over time.</li>
+                <li>Certain launch sites outperform others.</li>
+                <li>Payload mass shows a measurable impact on outcomes.</li>
+                <li>Booster configuration is a critical operational factor.</li>
+            </ul>
+        </div>
+
+        <!-- Strategic Recommendations -->
+        <div class="insight-card">
+            <h2>Strategic Recommendations</h2>
+            <ul class="insight-list">
+                <li>Prioritize historically high-performing launch sites.</li>
+                <li>Evaluate payload configurations before mission approval.</li>
+                <li>Use predictive models during planning and risk assessment.</li>
+                <li>Continuously retrain the model as new launch data becomes available.</li>
+            </ul>
+        </div>
+
+        <!-- Business Value -->
+        <div class="insight-card">
+            <h2>Business Value</h2>
+            <p>
+                The solution provides a data-driven framework to reduce mission
+                risk, improve planning decisions, and optimize operational
+                performance.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

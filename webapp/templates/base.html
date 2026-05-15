@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <!-- ======================================================
+         META TAGS
+    ======================================================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>
-            {% block title %}
-                SpaceX Launch Optimization Dashboard
-            {% endblock %}
-        </title>
+    <!-- ======================================================
+         PAGE TITLE
+    ======================================================= -->
+    <title>
+        {% block title %}
+            Space Launch Optimization Dashboard
+        {% endblock %}
+    </title>
 
-        {{ url_for('static', filename='css/styles.css') }}
+    <!-- ======================================================
+         MAIN CSS
+    ======================================================= -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/styles.css') }}"
+    >
 
-        <script>
-            src = "https://cdn.plot.ly/plotly-latest.min.js"
-        </script>
+    <!-- ======================================================
+         PLOTLY JAVASCRIPT LIBRARY
+    ======================================================= -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-        {% block extra head %}{% endblock %}
-    </head>
-    <body>
-        <header class="site-header">
+    <!-- ======================================================
+         EXTRA HEAD CONTENT
+    ======================================================= -->
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- ======================================================
+         HEADER / NAVBAR
+    ======================================================= -->
+    <header class="site-header">
         <div class="container">
 
-            <a class="logo" href="{{ url_for('main.home') }}">
+            <!-- Logo -->
+            <a class="logo" href="{{ url_for('home') }}">
                 Space Launch Optimization
             </a>
 
+            <!-- Navigation -->
             <nav class="main-nav">
-                <a href="{{ url_for('main.home') }}">Home</a>
-                <a href="{{ url_for('main.analytics') }}">Analytics</a>
-                <a href="{{ url_for('main.map_view') }}">Map</a>
-                <a href="{{ url_for('main.predictor') }}">Predictor</a>
-                <a href="{{ url_for('main.insights') }}">Insights</a>
-                <a href="{{ url_for('main.about') }}">About</a>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('analytics') }}">Analytics</a>
+                <a href="{{ url_for('map_view') }}">Map</a>
+                <a href="{{ url_for('predictor') }}">Predictor</a>
+                <a href="{{ url_for('insights') }}">Insights</a>
+                <a href="{{ url_for('about') }}">About</a>
             </nav>
 
         </div>
-        </header>
-        <footer class="site-footer">
-            <div class="container footer-content">
+    </header>
+
+    <!-- ======================================================
+         MAIN CONTENT
+    ======================================================= -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+    <footer class="site-footer">
+        <div class="container footer-content">
 
             <p class="footer-title">
                 Space Launch Optimization with Machine Learning
@@ -50,16 +84,42 @@
             </p>
 
             <div class="footer-links">
-                <a href="https://github.com/fernandorioseco" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/fernandorioseco/" target="_blank">LinkedIn</a>
-                <a href="https://fernandorioseco.es" target="_blank">Portfolio</a>
+                <a
+                    href="https://github.com/fernandorioseco"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/fernandorioseco/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://fernandorioseco.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Portfolio
+                </a>
             </div>
 
             <p class="footer-author">
                 Fernando Rioseco Rodriguez &copy; 2026
             </p>
 
-            </div>
-        </footer>
-    </body>
+        </div>
+    </footer>
+
+    <!-- ======================================================
+         MAIN JAVASCRIPT
+    ======================================================= -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
 </html>

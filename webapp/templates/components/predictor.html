@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Launch Success Predictor | Space Launch Optimization
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Launch Success Predictor</h1>
+        <p class="page-subtitle">
+            Estimate the probability of mission success using the trained
+            machine learning model.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Prediction Form -->
+        <form method="POST" class="prediction-form">
+
+            <!-- Launch Site -->
+            <div class="form-group">
+                <label for="launch_site" class="form-label">
+                    Launch Site
+                </label>
+                <select
+                    id="launch_site"
+                    name="launch_site"
+                    class="form-select"
+                >
+                    {% for site in launch_sites %}
+                        <option value="{{ site }}">
+                            {{ site }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Payload Mass -->
+            <div class="form-group">
+                <label for="payload_mass" class="form-label">
+                    Payload Mass (kg)
+                </label>
+                <input
+                    type="number"
+                    id="payload_mass"
+                    name="payload_mass"
+                    class="form-input"
+                    min="0"
+                    step="1"
+                    required
+                >
+            </div>
+
+            <!-- Orbit -->
+            <div class="form-group">
+                <label for="orbit" class="form-label">
+                    Orbit
+                </label>
+                <select
+                    id="orbit"
+                    name="orbit"
+                    class="form-select"
+                >
+                    {% for orbit in orbits %}
+                        <option value="{{ orbit }}">
+                            {{ orbit }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Booster Version -->
+            <div class="form-group">
+                <label for="booster_version" class="form-label">
+                    Booster Version
+                </label>
+                <select
+                    id="booster_version"
+                    name="booster_version"
+                    class="form-select"
+                >
+                    {% for booster in booster_versions %}
+                        <option value="{{ booster }}">
+                            {{ booster }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-primary">
+                Predict Success Probability
+            </button>
+
+        </form>
+
+        <!-- Prediction Results -->
+        {% if prediction is not none %}
+
+            <div class="prediction-results">
+
+                <div class="kpi-card">
+                    <p class="kpi-value">
+                        {{ prediction }}%
+                    </p>
+                    <p class="kpi-label">
+                        Predicted Success Probability
+                    </p>
+                </div>
+
+                <div class="chart-card">
+                    {{ gauge_chart | safe }}
+                </div>
+
+                <div class="insight-card">
+                    <h3>Executive Recommendation</h3>
+                    <p>{{ recommendation }}</p>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}

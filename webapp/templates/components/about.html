@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About the Project | Space Launch Optimization
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">About the Project</h1>
+        <p class="page-subtitle">
+            Technical overview, methodology, and technologies used.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Project Overview -->
+        <div class="about-card">
+            <h2>Project Overview</h2>
+            <p>
+                This project analyzes historical SpaceX launch data to identify
+                the variables that most influence mission success and to build a
+                machine learning model capable of estimating the probability of
+                successful future launches.
+            </p>
+        </div>
+
+        <!-- Objectives -->
+        <div class="about-card">
+            <h2>Objectives</h2>
+            <ul class="about-list">
+                <li>Perform exploratory data analysis.</li>
+                <li>Identify key success factors.</li>
+                <li>Train and evaluate predictive models.</li>
+                <li>Deploy an interactive dashboard.</li>
+            </ul>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="about-card">
+            <h2>Technology Stack</h2>
+            <ul class="about-list">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Plotly</li>
+                <li>Flask</li>
+                <li>Scikit-learn</li>
+                <li>HTML/CSS</li>
+            </ul>
+        </div>
+
+        <!-- Author -->
+        <div class="about-card">
+            <h2>Author</h2>
+            <p>
+                Developed by Fernando Rioseco Rodriguez as part of a professional
+                data science portfolio.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="about-card">
+            <h2>Project Links</h2>
+            <ul class="about-list">
+                <li>
+                    <a href="https://fernandorioseco.es/space-launch-optimization-with-machine-learning/">
+                        Article
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/fernandorioseco/space-launch-optimization">
+                        GitHub Repository
+                    </a>
+                </li>
+                <li>
+                    <a href="https://fernandorioseco.es">
+                        Portfolio Website
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

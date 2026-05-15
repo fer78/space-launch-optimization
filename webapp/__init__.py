@@ -1,6 +1,15 @@
 from flask import Flask
 
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-from webapp import routes
+    from webapp import routes
+    routes.init_app(app)
+
+    return app
+
+
+app = create_app()
+
+

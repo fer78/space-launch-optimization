@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Launch Sites Map | Space Launch Optimization
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Launch Sites Map</h1>
+        <p class="page-subtitle">
+            Interactive geospatial visualization of SpaceX launch locations,
+            launch volume, and mission success rates.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Map Container -->
+        <div class="chart-card">
+            {{ map_html | safe }}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

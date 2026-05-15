@@ -1,19 +1,50 @@
-# Space-Launch-Optimization-with-Machine-Learning
+# Space Launch Optimization with Machine Learning
 
-## **Descripción del proyecto**
+Interactive web application that analyzes historical SpaceX launch data and
+predicts mission success probability using machine learning.
 
-**SpaceY: Predicción de Reutilización de Cohetes y Costos de Lanzamiento**
+## Project Overview
 
-Este proyecto simula el rol de un científico de datos en la industria espacial comercial. Usando datos públicos de SpaceX, desarrollamos modelos de **aprendizaje automático** para:
+This project combines:
 
-1. **Predecir si la primera etapa de un cohete Falcon 9 será reutilizada**, optimizando los costos de lanzamiento.
+- Exploratory Data Analysis (EDA)
+- Interactive Plotly visualizations
+- Geospatial mapping
+- Machine Learning prediction
+- Flask web application deployment
 
-El objetivo es proporcionar a **SpaceY**, una nueva empresa de cohetes, una herramienta basada en datos para tomar decisiones estratégicas sobre lanzamientos y reutilización de cohetes, sin necesidad de cálculos de ingeniería complejos.
+The application is designed as an executive dashboard that translates
+technical analysis into actionable business insights.
 
-El proyecto incluye:
+## Application Sections
 
-* Recolección y limpieza de datos públicos de SpaceX.
-* Análisis exploratorio de datos (EDA).
-* Entrenamiento y evaluación de modelos de clasificación y regresión.
-* Visualizaciones para comprender los factores que influyen en la reutilización y el costo.
+- **Home** — Executive overview and KPIs
+- **Analytics** — Interactive visualizations
+- **Map** — Geospatial analysis of launch sites
+- **Predictor** — Machine learning inference tool
+- **Insights** — Strategic conclusions
+- **About** — Methodology and technology stack
+
+## Technology Stack
+
+- Python
+- Flask
+- Jinja2
+- Pandas
+- Plotly
+- Scikit-learn
+- HTML/CSS
+- JavaScript
+
+## Project Structure
+
+```text
+space-launch-optimization/
+├── run.py
+├── requirements.txt
+├── README.md
+├── data/
+├── models/
+├── notebooks/
+└── webapp/
 
